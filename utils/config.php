@@ -3,6 +3,8 @@
 // get conncetion parameters from .ini file
 $params = parse_ini_file('database.ini');
 
+session_start();
+
 try {
 	// create pdo 
 		$context = sprintf("pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s", 

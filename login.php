@@ -2,32 +2,31 @@
 //include config
 require_once('utils/config.php');
 
-//check if already logged in
+//check if is already logged in
 if( $user->is_logged_in() ) { 
 	header('Location: dashboard.php'); exit(); 
 	}
 
 //login form php script
 if(isset($_POST['connect'])){
-	if (!isset($_POST['username'])) $error[] = "please enter a username and password";
-	if (!isset($_POST['password'])) $error[] = "please enter a username and password";
-	$username = $_POST['username'];
-	if ( $user->isValidUsername($username)){
-		if (!isset($_POST['password'])){
-			$error[] = 'A password must be entered';
-		}
+	if ( ($_POST['username']=="") or ($_POST['password']=="") ) { $error[] = 'please enter a username and password'; }
+	else {
+		$username = $_POST['username'];
 		$password = $_POST['password'];
-		if($user->login($username,$password)){
-			$_SESSION['username'] = $username;
-			header('Location: dashboard.php');
-			exit;
-		} else {
-			$error[] = 'wrong username or password';
+		if ( $user->isValidUser($username,$password)){
+			if($user->login($username,$password)){
+				$_SESSION['username'] = $username;
+				header('Location: dashboard.php');
+				exit;
+			} else {
+				$error[] = 'wrong username or password';
+			}
+		}else{
+			$error[] = 'usernames must be Alphanumeric, and between 3-16 characters long';
 		}
-	}else{
-		$error[] = 'usernames must be Alphanumeric, and between 3-16 characters long';
-	}
+	}																															
 }
+
 //page title
 $title='Login';
 
@@ -59,7 +58,7 @@ require('layout/start.php');
 				}
 				
 			?> 
-			No account? Create new account <a href="#">here</a>
+			No account? Create new account <a href="signup.php">here</a>
 		</p>
 	</div>
 
