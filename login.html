@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Devinity</title>
+	<link rel="stylesheet" type="text/css" href="page.css">
+</head>
+<body>
+	<h1>Devinity</h1>
+	<form class="login" name="login" action="" method="POST">
+		<div class="textfields">
+			<label for="username">username</label><input type="text" name="username" id="username">
+		</div>
+
+		<div class="textfields">
+			<label for="password">password</label><input type="password" name="password" id="password">
+		</div>
+
+		<div name="actions" class="actions">
+			<input type="submit" name="connect" value="Login">
+			<a href="#">I forgot my password</a>
+		</div>
+	</form>
+	<div class="account">
+		<p>No account? Create new account <a href="#">here</a></p>
+	</div>
+</body>
+</html>
+
+CREATE TABLE 'members' (
+  'user_id' serial PRIMARY KEY,
+  'username' varchar(255) NOT NULL,
+  'password' varchar(255) NOT NULL,
+  'email' varchar(255) NOT NULL,
+
+  'active' varchar(255) NOT NULL,
+  'resetToken' varchar(255) DEFAULT NULL,
+  'resetComplete' varchar(3) DEFAULT 'No'
+)

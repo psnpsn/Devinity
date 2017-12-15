@@ -1,0 +1,120 @@
+@font-face {
+	font-family: arcade-classic;
+    src: url(../fonts/ARCADECLASSIC.TTF);
+}
+
+@font-face {
+	font-family: arcade-lower;
+    src: url(../fonts/ArcadeAlternate.ttf);
+}
+
+@font-face {
+	font-family: arcade-fancy;
+    src: url(../fonts/ka1.ttf);
+}
+
+body {
+	padding-top: 10%;
+	padding-left: 35%;
+	padding-right: 35%;
+	background-color:#FDF6F6;
+	background: url(../bckg0.jpg) no-repeat center center fixed;
+	height: 100%;
+	font-weight: 100%;
+    background-size: cover;
+
+}
+
+/*COLOR PALETTE
+	mint : #B3DBC0
+	beige : #E99787
+	porcelaine : #FDF6F6
+	fesh blue : #67BACA */
+
+h1 {
+	text-align: center;
+	font-family: arcade-fancy;
+	color : #FDF6F6;
+}
+
+
+
+.login label, p {
+	font-family: arcade-lower;
+	color : #FDF6F6;
+}
+
+input[type="submit"] {
+	border: 1px solid rgba(191, 216, 227, .8);
+	border-radius: 5px;
+	color: #fff;
+	background-color:#67BACA;
+	font-size: 110%;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+	height: 20px;
+	width: 100px;
+	border: 2px solid black;
+	border-radius: 8px;
+	font-size: 110%;
+	width: 80%;
+  
+}
+
+
+
+.actions a {
+	font-size: 80%;
+}
+
+@supports (display: grid) { 
+
+	@media (min-width: 650px) {
+		.login {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-areas:
+				"user"
+				"pw"
+				"login";
+				
+			width: auto;
+
+
+		}
+
+		.username-area > label,
+		.password-area > label
+		 {
+			
+		}
+		
+		.textfields{
+			display: grid;
+		    grid-template-columns: 1fr 2fr;
+		    align-items: center;
+		     padding: 5px 0 0 30px;
+		     
+		}
+
+		.actions {
+			display: grid;
+		    grid-template-columns: 1fr 1fr 1fr;
+		    align-items: center;
+			 padding: 5px 0 0 20px;
+		}
+
+		input[type="submit"] {
+      		grid-column: 2;
+      		margin-right: 5px;
+   		}
+
+		
+	}
+}
+
