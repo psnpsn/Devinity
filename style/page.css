@@ -36,7 +36,11 @@ body {
 	porcelaine : #FDF6F6
 	fesh blue : #67BACA */
 
-h1,h2 {
+h1{
+	font-size: 50px;
+}
+
+h1,h2,h3 {
 	font-family: arcade-fancy;
 	color : #FDF6F6;
 }
@@ -56,16 +60,50 @@ input[type="submit"] {
 */
 
 
-input[type="text"],
+.login input[type="text"],
+.signup input[type="text"],
 input[type="password"],
 input[type="e-mail"] {
 	height: 20px;
 	width: 200px;
 	border: 2px solid black;
-	border-radius: 8px;
+	border-top-left-radius: 8px;
 	font-size: 110%;
+}
 
-  
+.correct-yes{
+	color:green;
+}
+
+.button{
+	height: 60px ;
+	width:60px ;
+	border-radius: 60px;
+	border-color: blue;
+	background-color: darkblue;
+	font-family: arcade-classic;
+	font-size:40px;
+}
+.button:hover{
+	height: 60px ;
+	width:60px ;
+	border-radius: 60px;
+	border-color: darkblue;
+	background-color: blue;
+	font-family: arcade-classic;
+	font-size:40px;
+}
+
+
+.numberText{
+	height: 80px;
+	width: 150px;
+	font-size: 300%;
+	color:white;
+	background:transparent;
+	border:none;
+	font-family: arcade-classic;
+	padding-left: 40px;
 }
 
 input[type="submit"] {
@@ -81,10 +119,30 @@ input[type="submit"] {
    
 }
 
+.correct {
+	color: #FF7900;
+}
+
 
 .actions a {
 	font-size: 10px;
 	font-family: arcade-lower;
+}
+
+.orange{
+	color: #FF7900;
+}
+
+a{
+	color:white;
+}
+
+a:visited{
+	color:white;
+}
+
+a:hover{
+	color:red;
 }
 
 @supports (display: grid) { 
@@ -123,6 +181,38 @@ input[type="submit"] {
 				
 			width: auto;
 		}
+
+		.play {
+			display:grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-areas: 
+				"choose choose"
+				"number button"
+				"result tools"
+		}
+
+		.choose {
+			grid-area: choose;
+		}
+
+		.txt-number{
+			grid-area: number;
+		}
+
+		.button{
+			grid-area: button;
+		}
+
+		.result{
+			grid-area: result;
+		}
+
+		.tools{
+			grid-area: tools;
+			margin-left: 40px;
+		}
+
 			
 		}
 		
@@ -150,4 +240,8 @@ input[type="submit"] {
 		
 	}
 }
+
+
+
+
 

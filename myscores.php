@@ -17,9 +17,9 @@ require('layout/start.php');
 
 <!-- HTML -->
 <h1>Devinity</h1>
-<h2><a href="levelone.php">Level 1</a></h2>
-<h2><a href="leveltwo.php">Level 2</a></h2>
-<h2><a href="levelthree.php">Level 3</a></h2>
+<h2>Level 1 - <span class="orange"><?php echo $_SESSION['best_one']; ?></span></h2>
+<h2>Level 2 - <span class="orange"><?php echo $_SESSION['best_two']; ?></span></h2>
+<h2>Level 3 - <span class="orange"><?php echo $_SESSION['best_three']; ?></span></h2>
 <h2><a href="dashboard.php">Back</a></h2>
 
 

@@ -15,8 +15,8 @@ require('layout/start.php');
 <h1>Devinity</h1>
 <div>
 	<h2><a href='play.php'>Play</a></h2>
-	<h2>My scores</h2>
-	<h2>Leadboard</h2>
+	<h2><a href='myscores.php'>My scores</a></h2>
+	<h2><a href='leadboard.php'>Leadboard</a></h2>
 	<h2><a href='logout.php'>Logout</a></h2>
 </div>
 
